@@ -19,9 +19,11 @@ def view_data():
             date = entry["date"]
             mood = entry['mood']
             reflection = entry['reflection']
+            category = entry['category']
             print(f"Date written: {date}")
             print(f"Mood score of entry: {mood}")
             print(f"One line reflection: {reflection}")
+            print(f"What category does this belong to?: {category}")
             print("\n\n")
 
 def add_data():
