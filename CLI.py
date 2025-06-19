@@ -12,20 +12,25 @@ def choices():
 
 #option 1 View data
 def view_data():
-    with open(filename, 'r') as f:
-        temp = json.load(f)
-        for entry in temp:
-            print(entry)
-            date = entry["date"]
-            mood = entry['mood']
-            reflection = entry['reflection']
-            category = entry['category']
-            print(f"Date written: {date}")
-            print(f"Mood score of entry: {mood}")
-            print(f"One line reflection: {reflection}")
-            print(f"What category does this belong to?: {category}")
-            print("\n\n")
+    sort_type = input('Would you like to sort by date (D) or Category (C)')
+    if sort_type == "C" or sort_type == 'c':
+        with open(filename, 'r') as f:
+            temp = json.load(f)
+            for entry in temp:
+             print(entry)
+                date = entry["date"]
+                mood = entry['mood']
+                reflection = entry['reflection']
+                category = entry['category']
+                print(f"Date written: {date}")
+                print(f"Mood score of entry: {mood}")
+                print(f"One line reflection: {reflection}")
+                print(f"What category does this belong to?: {category}")
+                print("\n\n")
+    elif sort_type == 'c' or sort_type == "C":
+        pass
 
+# Add Data Function
 def add_data():
     item_data = {}
     with open (filename, 'r') as f:
