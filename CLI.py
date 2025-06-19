@@ -2,7 +2,7 @@
 from datetime import date
 import os
 import json
-filename = '/Users/federica/Desktop/PFS/python-for-everybody-notes/CLIJournal/journal_entries.json'
+filename = '/Users/federica/Desktop/PFS/CLIJournal/CLI_project/journal_entries.json'
 #Choices
 def choices():
     print('Journal Data Management System')
@@ -12,21 +12,21 @@ def choices():
 
 #option 1 View data
 def view_data():
-    sort_type = input('Would you like to sort by date (D) or Category (C)')
-    if sort_type == "C" or sort_type == 'c':
-        with open(filename, 'r') as f:
-            temp = json.load(f)
-            for entry in temp:
-             print(entry)
-                date = entry["date"]
-                mood = entry['mood']
-                reflection = entry['reflection']
-                category = entry['category']
-                print(f"Date written: {date}")
-                print(f"Mood score of entry: {mood}")
-                print(f"One line reflection: {reflection}")
-                print(f"What category does this belong to?: {category}")
+    with open(filename, 'r') as f:
+        temp = json.load(f)
+        for entry in temp:
+            print(entry)
+            date = entry["date"]
+            mood = entry['mood']
+            reflection = entry['reflection']
+            print(f"Date written: {date}")
+            print(f"Mood score of entry: {mood}")
+            print(f"One line reflection: {reflection}")
                 print("\n\n")
+                print("\n\n")
+    elif sort_type == 'c' or sort_type == "C":
+        pass
+            print("\n\n")
     elif sort_type == 'c' or sort_type == "C":
         pass
 
@@ -58,7 +58,7 @@ def add_data():
             x = 1
     
 
-
+#Sorting data
 
 
 while True:
