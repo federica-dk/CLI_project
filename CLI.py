@@ -22,13 +22,8 @@ def view_data():
             print(f"Date written: {date}")
             print(f"Mood score of entry: {mood}")
             print(f"One line reflection: {reflection}")
-                print("\n\n")
-                print("\n\n")
-    elif sort_type == 'c' or sort_type == "C":
-        pass
             print("\n\n")
-    elif sort_type == 'c' or sort_type == "C":
-        pass
+            print("\n\n")
 
 # Add Data Function
 def add_data():
