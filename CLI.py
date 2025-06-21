@@ -5,29 +5,43 @@ import json
 filename = '/Users/federica/Desktop/PFS/CLIJournal/CLI_project/journal_entries.json'
 #Choices
 def choices():
-    print('Journal Data Management System')
-    print('1. View')
-    print('2. Write')
+    print('"\n📓 Journal Menu:"')
+    print('1. View Entries')
+    print('2. Write Entry')
+    print('3. Search Entries')
     print('3. Delete Entry')
     print('4. Exit')
+    print("-" * 30)
 
 #option 1 View data
 def view_data():
+    print("\n📚 Your Journal Entries:")
     searching = input('Would you like to search for a specific entry?(Y / N): ')
     if searching == 'N' or searching == 'n':
         with open(filename, 'r') as f:
             temp = json.load(f)
             for entry in temp:
+                print("*" * 40)
                 date = entry["date"]
                 mood = entry['mood']
                 reflection = entry['reflection']
-                print(f"Date written: {date}")
+                print(f"🕒 Date written: {date}")
                 print(f"Mood score of entry: {mood}")
                 print(f"One line reflection: {reflection}")
                 print("\n\n")
                 print("\n\n")
+                print("*" * 40)
     else:
-        search()
+        print('Would you like to search by:')
+        print('1. Date')
+        print('2. Mood')
+        sub_choice = input()
+        if sub_choice == '1':
+            search_by_date()
+        elif sub_choice == '2':
+            search_by_mood()
+        else:
+            print('Invalid choice')
 
 # Add Data Function
 def add_data():
@@ -36,9 +50,12 @@ def add_data():
         temp = json.load(f)
     x = 0
     item_data['date'] = str(date.today()),
-    item_data['mood'] = input('Enter your mood (1-10): '),
-    item_data['reflection']= input("What is today's one line reflection?: ")
+    item_data['mood'] = input('Enter your mood (1-10): ').strip(),
+    item_data['reflection']= input("What is today's one line reflection?: ").strip()
     print(item_data)
+    if item_data['mood'] == '' or item_data['reflection'] == '':
+        print("Entry cannot be empty.")
+        return
 
     value = input('Would you like to comit this entry? (Y or N): ')
     x = 1
@@ -48,6 +65,7 @@ def add_data():
             temp.append(item_data)
             with open (filename, 'w') as f:
                 json.dump(temp, f, indent = 4)
+            print("✅ Entry added.")
         else:
             item_data['date'] = str(date.today()),
             item_data['mood'] = input('Enter your mood (1-10): '),
@@ -58,7 +76,7 @@ def add_data():
     
 
 #Sorting data
-def search():
+def search_by_date():
     item_data = {}
     with open (filename, 'r') as f:
         temp = json.load(f)
@@ -83,6 +101,31 @@ def search():
         if not found_entry:
             print(f"No journal entries found for the date: {value}")
 
+#Search by Keyword function
+def search_by_mood():
+    item_data = {}
+    with open (filename, 'r') as f:
+        temp = json.load(f)
+    x = 0
+    item_data = temp
+    value = input("Enter mood score (1-10) to search: ").strip().lower()
+    found_entry = False
+    for entry in item_data:
+        if entry['mood'] == value:
+            date = entry["date"]
+            mood = entry['mood']
+            reflection = entry['reflection']
+            print(f"Date written: {date}")
+            print(f"Mood score of entry: {mood}")
+            print(f"One line reflection: {reflection}")
+            print("\n\n")
+            print("\n\n")
+            found_entry = True
+            remove = input('Would you like to delete this entry? (Y / N)')
+            if remove == 'Y' or remove == 'y':
+                delete()
+        if not found_entry:
+            print(f"No journal entries found for the mood: {value}")
 
 #Delete entry function
 def delete():
@@ -113,12 +156,24 @@ while True:
         view_data()
     elif choice == "2":
         add_data()
-    elif choice == "4":
+    elif choice == "5":
+        print('Goodbye!')
         break
     elif choice == '3':
+        print('Would you like to search by:')
+        print('1. Date')
+        print('2. Mood')
+        sub_choice = input()
+        if sub_choice == '1':
+            search_by_date()
+        elif sub_choice == '2':
+            search_by_mood()
+        else:
+            print('Invalid choice')
+    elif choice == '4':
         delete()
     else:
-        print('The answer is invalid please choose again')
+        print('Invalid input please choose again')
 
 
 
