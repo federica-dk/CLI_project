@@ -1,13 +1,13 @@
 # Daily Journal
-A simple Command Line Interfacing (CLI) journal to record your daily thoughts, mood, and reflection directly from your terminal. Built using Python, the program saves your prior entires creating a quick, provate way to track your reflections over time.
+A simple Command Line Interfacing (CLI) journal to record your daily thoughts, mood, and reflection directly from your terminal. Built using Python, the program saves your prior entires creating a quick, private way to track your reflections.
 
 ## ✨ Features
 * **Add Entries:** Quickly add new journal entries with a date, mood, and reflection.
-* **View Entries:** Browse through all your past journal entries.
+* **View Entries:** Browse through past journal entries.
 * **Search Entries:** Find specific entries by date or mood.
 * **Delete Entries:** Remove unwanted journal entries.
 * **Persistent Storage:** All data is saved to a local JSON file, ensuring your entries are preserved between sessions.
-* **User-Friendly CLI:** Designed for straightforward interaction directly in the terminal.
+* **User-Friendly CLI:** Straightforward interaction directly in the terminal.
 
 ## 🧰 Getting started
 * Python 3.6 or higher (You can check your Python version with `python --version` or `python3 --version`)
@@ -61,7 +61,7 @@ Contributions are welcome! If you have suggestions feel free to:
 1.  Fork the repository.
 2.  Create a new branch (`git checkout -b feature/InventiveFeature`).
 3.  Make your changes and commit them (`git commit -m 'feat: Add new Inventive feature'`).
-4.  Push to the branch (`git push origin feature/Inventive Feature`).
+4.  Push to the branch (`git push origin/Inventive Feature`).
 5.  Open a Pull Request.
 
 ## 📄 License
