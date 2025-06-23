@@ -1,2 +1,4 @@
-# CLI_project
-A simple CLI Journal Project
+# Daily Journal
+
+## 📝 Description
+A simple intuitive Command line interface
