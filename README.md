@@ -55,14 +55,6 @@ Once installed, you can run the journal program from your terminal.
 
     Enter your choice: 
     ```
-##  Contributing
-Contributions are welcome! If you have suggestions feel free to:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/InventiveFeature`).
-3.  Make your changes and commit them (`git commit -m 'feat: Add new Inventive feature'`).
-4.  Push to the branch (`git push origin/Inventive Feature`).
-5.  Open a Pull Request.
 
 ## 📄 License
 
