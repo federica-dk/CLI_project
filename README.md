@@ -1,7 +1,7 @@
 # Daily Journal
 A simple Command Line Interfacing (CLI) journal to record your daily thoughts, mood, and reflection directly from your terminal. Built using Python, the program saves your prior entires creating a quick, private way to track your reflections.
 
-## ✨ Features
+## Features
 * **Add Entries:** Quickly add new journal entries with a date, mood, and reflection.
 * **View Entries:** Browse through past journal entries.
 * **Search Entries:** Find specific entries by date or mood.
@@ -9,10 +9,10 @@ A simple Command Line Interfacing (CLI) journal to record your daily thoughts, m
 * **Persistent Storage:** All data is saved to a local JSON file, ensuring your entries are preserved between sessions.
 * **User-Friendly CLI:** Straightforward interaction directly in the terminal.
 
-## 🧰 Getting started
+## Getting started
 * Python 3.6 or higher (You can check your Python version with `python --version` or `python3 --version`)
   
-### ⚙️ Installation Steps
+### Installation Steps
 
 1.  **Clone the repository (or download the code):**
     ```bash
@@ -30,7 +30,7 @@ A simple Command Line Interfacing (CLI) journal to record your daily thoughts, m
 3.  **No external libraries required:**
     This project primarily uses Python's built-in `json` module, so there are no additional `pip install` steps needed unless you add new features requiring them.
 
-## 💡 Usage
+## Usage
 
 Once installed, you can run the journal program from your terminal.
 
@@ -55,7 +55,7 @@ Once installed, you can run the journal program from your terminal.
 
     Enter your choice: 
     ```
-## 🤝 Contributing
+##  Contributing
 Contributions are welcome! If you have suggestions feel free to:
 
 1.  Fork the repository.
